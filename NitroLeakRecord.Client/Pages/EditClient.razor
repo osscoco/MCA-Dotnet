@@ -1,0 +1,119 @@
+﻿@page "/client"
+@page "/client/{id:int}"
+@using Models
+@inject NavigationManager NavigationManager
+
+<PageTitle>@title</PageTitle>
+<h1>Formulaire de création d'un nouveau client</h1>
+<h3>@title</h3>
+
+@if (client == null)
+{
+    <p><em>Chargement ...</em></p>
+}
+else
+{
+
+    <div class="row">
+        <div class="col-sm-4">
+            <EditForm Model="@client" OnValidSubmit="HandleSubmit">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+                <div class="mb-3">
+                    <label for="firstname" class="form-label">Prénom : </label>
+                    <InputText id="firstname" @bind-Value="client.FirstName" class="form-control"></InputText>
+                </div>
+                <div class="mb-3">
+                    <label for="lastname" class="form-label">Nom : </label>
+                    <InputText id="lastname" @bind-Value="client.LastName" class="form-control"></InputText>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email : </label>
+                    <InputText id="email" @bind-Value="client.Email" class="form-control"></InputText>
+                </div>
+                <div class="mb-3">
+                    <label for="gender" class="form-label">Genre : </label>
+                    <InputSelect id="gender" @bind-Value="client.Gender" class="form-select">
+                        <option value="">Choisis un genre ...</option>
+                        <option value="Homme">Homme</option>
+                        <option value="Femme">Femme</option>
+                    </InputSelect>
+                </div>
+                <div class="mb-3">
+                    <label for="wallet" class="form-label">Wallet : </label>
+                    <InputNumber id="wallet" @bind-Value="client.Wallet" class="form-control"></InputNumber>
+                </div>
+                <div class="mb-3">
+                    <label for="dateOfBirth" class="form-label">Date de Naissance : </label>
+                    <InputDate id="dateOfBirth" @bind-Value="client.DateOfBirth" class="form-control"></InputDate>
+                </div>
+                <button type="submit" class="btn btn-primary">Sauvegarder</button>
+                <button type="button" class="btn btn-secondary" @onclick="@Cancel">Annuler</button>
+            </EditForm>
+        </div>
+    </div>
+
+}
+
+@code {
+
+    [Parameter]
+    public int? Id { get; set; }
+
+    private Client? client;
+
+    private string title = string.Empty;
+
+    protected override void OnParametersSet()
+    {
+        if (Id is not null)
+        {
+            Client foundClient = MusicClient.GetClientById(Id.Value);
+            client = new()
+                {
+                    Id = foundClient.Id,
+                    FirstName = foundClient.FirstName,
+                    LastName = foundClient.LastName,
+                    Email = foundClient.Email,
+                    Gender = foundClient.Gender,
+                    Wallet = foundClient.Wallet,
+                    DateOfBirth = foundClient.DateOfBirth
+                };
+
+            title = $"Modifier {client.FirstName} {client.LastName}";
+        }
+        else
+        {
+            client = new()
+                {
+                    FirstName = string.Empty,
+                    LastName = string.Empty,
+                    Email = string.Empty,
+                    Gender = string.Empty,
+                    Wallet = 0.00M,
+                    DateOfBirth = DateTime.UtcNow
+                };
+
+            title = $"Nouveau client";
+        }
+    }
+
+    private void HandleSubmit()
+    {
+        if (client!.Id == 0)
+        {
+            MusicClient.addClient(client);
+        }
+        else
+        {
+            MusicClient.UpdateClient(client);
+        }
+
+        NavigationManager.NavigateTo("/");
+    }
+
+    private void Cancel()
+    {
+        NavigationManager.NavigateTo("/");
+    }
+}

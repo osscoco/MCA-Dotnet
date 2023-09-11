@@ -818,7 +818,6 @@ C:\laragonprod\www\nitroleakrecord\NitroLeakRecord.Client\obj\Debug\net7.0\stati
 C:\laragonprod\www\nitroleakrecord\NitroLeakRecord.Client\obj\Debug\net7.0\staticwebassets.build.json
 C:\laragonprod\www\nitroleakrecord\NitroLeakRecord.Client\obj\Debug\net7.0\staticwebassets.development.json
 C:\laragonprod\www\nitroleakrecord\NitroLeakRecord.Client\obj\Debug\net7.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
-C:\laragonprod\www\nitroleakrecord\NitroLeakRecord.Client\obj\Debug\net7.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
 C:\laragonprod\www\nitroleakrecord\NitroLeakRecord.Client\obj\Debug\net7.0\scopedcss\bundle\NitroLeakRecord.Client.styles.css
 C:\laragonprod\www\nitroleakrecord\NitroLeakRecord.Client\obj\Debug\net7.0\scopedcss\projectbundle\NitroLeakRecord.Client.bundle.scp.css
 C:\laragonprod\www\nitroleakrecord\NitroLeakRecord.Client\obj\Debug\net7.0\NitroLeakRecord.Client.csproj.CopyComplete

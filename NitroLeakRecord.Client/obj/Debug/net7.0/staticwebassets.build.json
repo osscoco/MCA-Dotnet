@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6Q86q7e34A+Juy0KR29OVfQ2AurUhL+Oo7HX9d6BLl0=",
+  "Hash": "NSocWwh8eMULiBmEngmQFYYpQbfrLosB+zJDoDcr+sE=",
   "Source": "NitroLeakRecord.Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -7155,23 +7155,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
-    },
-    {
-      "Identity": "C:\\laragonprod\\www\\nitroleakrecord\\NitroLeakRecord.Client\\wwwroot\\sample-data\\weather.json",
-      "SourceId": "NitroLeakRecord.Client",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\laragonprod\\www\\nitroleakrecord\\NitroLeakRecord.Client\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "sample-data/weather.json",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\sample-data\\weather.json"
     }
   ]
 }
